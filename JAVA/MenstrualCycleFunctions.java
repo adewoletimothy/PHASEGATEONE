@@ -29,17 +29,59 @@ public class MenstrualCycleFunctions{
 	}
 
 
-	public static int menstrualCycle(LocalDate startDate, LocalDate endDate){
+	public static long menstrualCycle(LocalDate startDate, LocalDate endDate){
 
-	startDate = LocalDate.of(01,03,25);
+	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yy");
+
+	startDate = LocalDate.parse("01/03/25", formatter);
         
-	endDate = LocalDate.of(29,03,25);
+	endDate = LocalDate.parse("29/03/25", formatter);
 
-        int daysInBetween = (int)ChronoUnit.DAYS.between(startDate, endDate);
+        long daysInBetween = ChronoUnit.DAYS.between(startDate, endDate);
 
 	return daysInBetween;
 	}
 
+
+	public static LocalDate ovulationDay(LocalDate ovulaton){
+
+	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yy");
+
+	LocalDate endDate = LocalDate.parse("29/03/25", formatter);
+
+	LocalDate sheOvulates = endDate.minusDays(14);
+
+	return sheOvulates;
+
+	}
+
+	public static LocalDate fertileWindowStart(LocalDate fertile){
+
+	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yy");
+
+	LocalDate endDate = LocalDate.parse("29/03/25", formatter);
+
+	LocalDate sheOvulates = endDate.minusDays(14);
+
+	LocalDate fertileWindowsStart = sheOvulates.minusDays(5);
+
+	return fertileWindowsStart;
+
+	}
+
+	public static LocalDate fertileWindowEnds(LocalDate fertile){
+
+	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yy");
+
+	LocalDate endDate = LocalDate.parse("29/03/25", formatter);
+
+	LocalDate sheOvulates = endDate.minusDays(14);
+
+	LocalDate fertileWindowsEnd = sheOvulates.plusDays(2);
+
+	return fertileWindowsEnd;
+
+	}
 
 
 }
