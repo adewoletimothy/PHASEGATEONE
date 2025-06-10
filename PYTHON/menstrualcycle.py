@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime , timedelta
 from datetime import date
 
 
@@ -11,8 +11,6 @@ def start_date(date):
 	format_her_start_date = her_start_date.strftime("%d/%m/%y")
 
 	return format_her_start_date
-		
-
 
 def end_date(date):
 
@@ -34,11 +32,35 @@ def menstrual_cycle(start_date , end_date):
 
 	return menstrual_cycle 
 
+def ovulation_day(date):
+
+	her_end_date = datetime.strptime("29/03/25", "%d/%m/%y").date()
+
+	she_ovulates = (her_end_date - timedelta(days=14)).strftime("%d/%m/%y")
+
+	return she_ovulates
+
+def start_fertile_window(date):
+
+	her_end_date = datetime.strptime("29/03/25", "%d/%m/%y").date()
+
+	she_ovulates = her_end_date - timedelta(days=14)
+
+	start_fertile_window = (she_ovulates - timedelta(days=5)).strftime("%d/%m/%y")
+
+	return start_fertile_window
+
+def end_fertile_window(date):
+
+	her_end_date = datetime.strptime("29/03/25", "%d/%m/%y").date()
+
+	she_ovulates = her_end_date - timedelta(days=14)
+
+	end_fertile_window = (she_ovulates + timedelta(days=2)).strftime("%d/%m/%y")
+
+	return end_fertile_window
+
 	
-	
-
-
-
 
 
 
