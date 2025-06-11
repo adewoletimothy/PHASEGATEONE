@@ -63,12 +63,10 @@ while(run):
 
 	discounted_price = discount / 100 * total_sum
 
-	total_sum = discounted_price - total_sum
+	vat_price = (17.5 / 100) * total_sum
 
-	vat_price = 17.5 * total_sum
+	final_price = total_sum - discounted_price + vat_price
 
-	print(discounted_price)
-		
 	run = False
 
 invoice = """
@@ -81,13 +79,54 @@ Date: 10/Jun/2025 9:00:23 pm
 print(invoice)
 print(f"Cashier: {cashier_name}")
 print(f"Customer Name: {customer_name}")
-print("=====================================================================")
-print("        ITEM    QTY    PRICE    TOTAL(NGN)")
-print("--------------------------------------------------------------------") 
+print("======================================================")
+print(f"{'':5}{'ITEM':<15}{'QTY':<10}{'PRICE':<15}{'TOTAL(NGN)':<15}")
+print("-------------------------------------------------------") 
 
-for i in item_purchased:
-	print(f"        {item_purchased[i]}     {item_qty[i]}    {item_price[i]}     {total_cost[i]}")	
-	#print(f"        {item_purchased[0]}     {item_qty[0]}    {item_price[0]}     {total_cost[0]}")		
+for item in range(len(item_purchased)):
+	print(f"{'':5}{item_purchased[item]:<15} {item_qty[item]:<10}{item_price[item]:<15,.2f}{total_cost[item]:<15,.2f}")	
+
+print("-------------------------------------------------------") 
+
+print(f"{'':<25}{'Sub Total:':<10}{total_sum:<5,.2f}")
+print(f"{'':<25}{'Discount:':<10}{discounted_price:<5,.2f}")
+print(f"{'':<25}{'VAT @17.50%:':<10}{vat_price:<5,.2f}")
+print("======================================================")
+print(f"{'':<25}{'Bill Total:':<10}{final_price:<5,.2f}")
+print("======================================================")
+print(f"THIS IS NOT A RECEIPT. KINDLY PAY {final_price}")
+print("======================================================")
+
+
+user_payment= int(input("How much did the customer give to you?"))
+
+print(invoice)
+print(f"Cashier: {cashier_name}")
+print(f"Customer Name: {customer_name}")
+print("======================================================")
+print(f"{'':5}{'ITEM':<15}{'QTY':<10}{'PRICE':<15}{'TOTAL(NGN)':<15}")
+print("-------------------------------------------------------") 
+
+for item in range(len(item_purchased)):
+	print(f"{'':5}{item_purchased[item]:<15} {item_qty[item]:<10}{item_price[item]:<15,.2f}{total_cost[item]:<15,.2f}")	
+
+print("-------------------------------------------------------") 
+
+print(f"{'':<25}{'Sub Total:':<10}{total_sum:<5,.2f}")
+print(f"{'':<25}{'Discount:':<10}{discounted_price:<5,.2f}")
+print(f"{'':<25}{'VAT @17.50%:':<10}{vat_price:<5,.2f}")
+print("======================================================")
+print(f"{'':<25}{'Bill Total:':<10}{final_price:<5,.2f}")
+print(f"{'':<25}{'Amount paid:':<10}{user_payment:<5,.2f}")
+
+balance = user_payment - final_price 
+print(f"{'':<25}{'Balnce:':<10}{balance:<5,.2f}")
+print("======================================================")
+print(f"{'':<10}THANK YOU FOR YOUR PATRONAGE.")
+print("======================================================")
+
+
+
 
 
 
