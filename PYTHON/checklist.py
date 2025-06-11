@@ -6,6 +6,10 @@ customer_name  = input("What is the customer's name? \n")
 
 item_purchased = []
 
+item_qty = []
+
+item_price = []
+
 total_cost = []
 
 run = True
@@ -18,13 +22,17 @@ while(run):
 
 	purchase_qty = int(input("How many pieces? \n"))
 
+	item_qty.append(purchase_qty)
+
 	purchase_price = int(input("How much per unit? \n"))
+
+	item_price.append(purchase_price)
 
 	cost = purchase_qty  * purchase_price
 
 	total_cost.append(cost)
 
-	request_add = input("Add more items? y/n  \n").lower()
+	request_add = input("Add more items? y/n \n").lower()
 
 	while (request_add == 'y'):
 	
@@ -34,7 +42,11 @@ while(run):
 
 		purchase_qty = int(input("How many pieces? \n"))
 
+		item_qty.append(purchase_qty)
+
 		purchase_price = int(input("How much per unit?\n "))
+
+		item_price.append(purchase_price)
 
 		cost = purchase_qty  * purchase_price
 
@@ -53,6 +65,8 @@ while(run):
 
 	total_sum = discounted_price - total_sum
 
+	vat_price = 17.5 * total_sum
+
 	print(discounted_price)
 		
 	run = False
@@ -68,9 +82,12 @@ print(invoice)
 print(f"Cashier: {cashier_name}")
 print(f"Customer Name: {customer_name}")
 print("=====================================================================")
-print("			ITEM	QTY		PRICE	TOTAL(NGN)")
-print("---------------------------------------------------------------------------------") 
+print("        ITEM    QTY    PRICE    TOTAL(NGN)")
+print("--------------------------------------------------------------------") 
 
+for i in item_purchased:
+	print(f"        {item_purchased[i]}     {item_qty[i]}    {item_price[i]}     {total_cost[i]}")	
+	#print(f"        {item_purchased[0]}     {item_qty[0]}    {item_price[0]}     {total_cost[0]}")		
 
 
 
