@@ -37,7 +37,7 @@ while(run){
 	
 		let userPurchase = prompt("What did the user buy?\n")
 
-		iitemPurchased.push(userPurchase)
+		itemPurchased.push(userPurchase)
 
 		let purchaseQty = parseInt(prompt("How many pieces? \n"))
 
@@ -75,10 +75,10 @@ console.log("LOCATION: 312, HERBERT MACAULAY WAY, SABO YABA LAGOS.")
 console.log("TEL: 03243523231")
 console.log("Date: 10/Jun/2025 9:00:23 pm")
 console.log("Cashier: " + cashierName);
-consol.log("Customer Name: " + customerName);
-consol.log("======================================================");
-consol.log(`${''.padEnd(5)} $ {'ITEM'.padEnd(15)} $ {'QTY'.padEnd(10)} $ {'PRICE'.padEnd(15)} $ {'TOTAL(NGN)'.padEnd(15)}`);
-consol.log("-------------------------------------------------------");
+console.log("Customer Name: " + customerName);
+console.log("======================================================");
+console.log(`${''.padEnd(5)} $ {'ITEM'.padEnd(15)} $ {'QTY'.padEnd(10)} $ {'PRICE'.padEnd(15)} $ {'TOTAL(NGN)'.padEnd(15)}`);
+console.log("-------------------------------------------------------");
 
 for (let item = 0; item < itemPurchased.length; item++){
 	console.log(`${"".padEnd(5)} $ {itemPurchased[item].padEnd(15)} $ {itemQty[item].padEnd(10)} $ {itemPrice[item].toFixed(2).padEnd(15)} $ {totalCost[item].toFixed(2).padEnd(15)}`);
@@ -104,10 +104,10 @@ console.log("LOCATION: 312, HERBERT MACAULAY WAY, SABO YABA LAGOS.")
 console.log("TEL: 03243523231")
 console.log("Date: 10/Jun/2025 9:00:23 pm")
 console.log("Cashier: " + cashierName);
-consol.log("Customer Name: " + customerName);
-consol.log("======================================================");
-consol.log(`${''.padEnd(5)} $ {'ITEM'.padEnd(15)} $ {'QTY'.padEnd(10)} $ {'PRICE'.padEnd(15)} $ {'TOTAL(NGN)'.padEnd(15)}`);
-consol.log("-------------------------------------------------------");
+console.log("Customer Name: " + customerName);
+console.log("======================================================");
+console.log(`${''.padEnd(5)} $ {'ITEM'.padEnd(15)} $ {'QTY'.padEnd(10)} $ {'PRICE'.padEnd(15)} $ {'TOTAL(NGN)'.padEnd(15)}`);
+console.log("-------------------------------------------------------");
 
 for (let item = 0; item < itemPurchased.length; item++){
 	console.log(`${"".padEnd(5)} $ {itemPurchased[item].padEnd(15)} $ {itemQty[item].padEnd(10)} $ {itemPrice[item].toFixed(2).padEnd(15)} $ {totalCost[item].toFixed(2).padEnd(15)}`);
