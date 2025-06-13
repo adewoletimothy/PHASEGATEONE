@@ -1,8 +1,5 @@
-#cashier_name
 
 customer_name  = input("What is the customer's name? \n")
-
-
 
 item_purchased = []
 
