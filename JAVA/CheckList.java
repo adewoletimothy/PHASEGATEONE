@@ -140,6 +140,10 @@ System.out.println("======================================================");
 
 System.out.println("How much did the customer give to you?");
 double userPayment = scanner.nextDouble();
+while (userPayment < finalPrice){
+	System.out.print("Incomplete payment. Enter payment: ")
+		userPayment = scanner.nextDouble();
+}
 
 System.out.println();
 

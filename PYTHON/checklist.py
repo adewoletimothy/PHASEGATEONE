@@ -30,6 +30,8 @@ while(run):
 	total_cost.append(cost)
 
 	request_add = input("Add more items? y/n \n").lower()
+	while (request_add != 'y' and request_add != 'n'):
+		request_add = input("Enter 'y' or 'n' \n").lower()
 
 	while (request_add == 'y'):
 	
@@ -50,7 +52,8 @@ while(run):
 		total_cost.append(cost)
 
 		request_add = input("Add more items? y/n  \n").lower()
-
+		while (request_add != 'y' and request_add != 'n'):
+			request_add = input("Enter 'y' or 'n' \n").lower()
 
 	cashier_name = input("What is your name?\n")
 
@@ -96,6 +99,8 @@ print("======================================================")
 
 
 user_payment= int(input("How much did the customer give to you?"))
+while user_payment < final_price:
+	user_payment = int(input("Incomplete payment. Enter amount: "))
 
 print(invoice)
 print(f"Cashier: {cashier_name}")
@@ -117,7 +122,7 @@ print(f"{'':<25}{'Bill Total:':<10}{final_price:<5,.2f}")
 print(f"{'':<25}{'Amount paid:':<10}{user_payment:<5,.2f}")
 
 balance = user_payment - final_price 
-print(f"{'':<25}{'Balnce:':<10}{balance:<5,.2f}")
+print(f"{'':<25}{'Balance:':<10}{balance:<5,.2f}")
 print("======================================================")
 print(f"{'':<10}THANK YOU FOR YOUR PATRONAGE.")
 print("======================================================")

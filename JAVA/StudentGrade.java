@@ -1,4 +1,3 @@
-/*
 import java.util.Scanner;
 import java.util.ArrayList;
 
@@ -8,6 +7,8 @@ public class StudentGrade{
 	public static void main(String[] args){
 
 	Scanner input = new Scanner(System.in);
+
+	ArrayList<Integer> scores = new ArrayList<>();
 
 	System.out.println("How many students are in record?");
 		int students = input.nextInt();
@@ -47,7 +48,7 @@ public class StudentGrade{
 
 }
 
-*/
+/*
 import java.util.Scanner;
 
 public class StudentGrade {
@@ -60,8 +61,7 @@ public class StudentGrade {
         input.nextLine();
 
         String[] studentNames = new String[numStudents];
-        int[][] studentScores = new int[numStudents][3]; // Assuming 3 subjects
-
+        int[][] studentScores = new int[numStudents][3];
         for (int i = 0; i < numStudents; i++) {
             System.out.print("Enter name of student " + (i + 1) + ": ");
             studentNames[i] = input.nextLine();
@@ -103,3 +103,4 @@ public class StudentGrade {
         }
     }
 }
+*/
